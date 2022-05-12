@@ -15,15 +15,20 @@ fetch("houses.json")
         //the argument "house" passed to the arrow function
         //holds each item in the array in turn.
         data.forEach((house) => {
-            let family = house.members.join(" | ");
+            let family = house.members;
             let objectInfo =
             
-            `<div class = "house">
+           `<div class = "house">
                 <dl>
-                    <dt> ${house.name}</dt>
-                    <dd> ${family} <dd>
-                </dl>
-            </div>`
+                    <dt> ${house.name}</dt>`;
+
+                    family.forEach((member) => {
+                        objectInfo +=
+                        `<dd>${member}</dd>`
+                    });
+                    objectInfo +=    
+                `</dl>
+            </div>`;
             
             html += objectInfo;
         });
