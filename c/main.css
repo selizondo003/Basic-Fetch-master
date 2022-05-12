@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.house{
+    border: solid black;
+    background-color: white;
+    border-radius: 5rem;
+    margin: 1rem;
+}
+dt{
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(99, 12, 89);
+    margin: 2rem;
+}
+dd{
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(140, 11, 116);
+    margin: 2rem 3rem;
+}

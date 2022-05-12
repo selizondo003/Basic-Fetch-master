@@ -16,12 +16,16 @@ fetch("houses.json")
         //holds each item in the array in turn.
         data.forEach((house) => {
             let family = house.members.join(" | ");
-
-            // generate the html snippet for one array item
-            //to be added to the "html" temp holder.
-            let objInfo = `<p class="house">${house.name}</p>
-        <p class="folks">${family}</p>`;
-            html += objInfo;
+            let objectInfo =
+            
+            `<div class = "house">
+                <dl>
+                    <dt> ${house.name}</dt>
+                    <dd> ${family} <dd>
+                </dl>
+            </div>`
+            
+            html += objectInfo;
         });
 
         //make a reference to the html container where
@@ -31,3 +35,36 @@ fetch("houses.json")
     })
     .catch((err) => console.log("Oops!", err));
     //this only runs if there is an error during the above process
+
+//color API
+
+fetch("https://x-colors.herokuapp.com/api/random")
+.then(response => response.json())
+.then(data => {
+    document.body.style.backgroundColor = data.hex;
+}).catch(err => {
+    console.error('oops', err.message);
+})
+
+
+
+
+
+
+
+
+/*
+async function getColor(url) {
+    try {
+        let res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log('my error is: ', error);
+    }
+}
+
+async function bgColor(url) {
+    const backgroundColor = await getColor('https://x-colors.herokuapp.com/api/random');
+    document.body.style.backgroundColor = data.hex;
+};
+*/
