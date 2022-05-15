@@ -4,7 +4,7 @@
 // passing its results to the next one in the chain.
 // the format is: fetch().then().then().catch()
 //it's easier to read if we put each step in its own line,
-//that's why the periods start the then lines.
+//that's why the periods start the then lines
 
 fetch("houses.json")
     .then((response) => response.json())
@@ -15,15 +15,20 @@ fetch("houses.json")
         //the argument "house" passed to the arrow function
         //holds each item in the array in turn.
         data.forEach((house) => {
-            let family = house.members.join(" | ");
+            let family = house.members;
             let objectInfo =
             
-            `<div class = "house">
+           `<div class = "house">
                 <dl>
-                    <dt> ${house.name}</dt>
-                    <dd> ${family} <dd>
-                </dl>
-            </div>`
+                    <dt> ${house.name}</dt>`;
+
+                    family.forEach((member) => {
+                        objectInfo +=
+                        `<dd>${member}</dd>`
+                    });
+                    objectInfo +=    
+                `</dl>
+            </div>`;
             
             html += objectInfo;
         });
