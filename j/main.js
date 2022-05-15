@@ -4,7 +4,7 @@
 // passing its results to the next one in the chain.
 // the format is: fetch().then().then().catch()
 //it's easier to read if we put each step in its own line,
-//that's why the periods start the then lines.
+//that's why the periods start the then lines
 
 fetch("houses.json")
     .then((response) => response.json())
